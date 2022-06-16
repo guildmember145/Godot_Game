@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/consumir_moneda.wav-659265702debd0e9624aca3b9025f2c4.sample"
+
+[deps]
+
+source_file="res://SFX/consumir_moneda.wav"
+dest_files=[ "res://.import/consumir_moneda.wav-659265702debd0e9624aca3b9025f2c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

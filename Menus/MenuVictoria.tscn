@@ -1,0 +1,152 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Menus/BotonMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://estilos/BotonMenu.tres" type="StyleBox" id=2]
+[ext_resource path="res://estilos/BotonMenu.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://recursos/Players/bunny2_jump.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Kenney Rocket.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Menus/MenuVictoria.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.392157, 0.435294, 1 )
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color( 0.0941176, 0.454902, 0.784314, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.780392, 0.0588235, 0.188235, 1 )
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 4 )
+
+[node name="MenuVictoria" type="Control"]
+self_modulate = Color( 0.447059, 0.0352941, 0.0352941, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 0, 0.811765, 1, 0.478431 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.48987
+margin_top = -2.24493
+margin_right = 4.48987
+margin_bottom = -2.24493
+color = Color( 0.105882, 0.0941176, 0.109804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 207.539, 292.027 )
+texture = ExtResource( 5 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje" type="Label" parent="Panel"]
+self_modulate = Color( 0.470588, 1, 0.454902, 1 )
+margin_left = 3.19638
+margin_top = 441.724
+margin_right = 583.196
+margin_bottom = 593.724
+custom_fonts/font = SubResource( 4 )
+text = "Puntaje"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NivelFinalizado" type="Label" parent="Panel2"]
+self_modulate = Color( 0.254902, 0.831373, 0.509804, 1 )
+margin_left = 3.19644
+margin_top = -2.26923
+margin_right = 583.196
+margin_bottom = 149.731
+custom_fonts/font = SubResource( 4 )
+text = "Nivel Completado"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+self_modulate = Color( 0.462745, 0.145098, 0.145098, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPrincipal" type="Button" parent="VBoxContainer" instance=ExtResource( 1 )]
+self_modulate = Color( 0, 0.960784, 1, 1 )
+margin_right = 200.0
+margin_bottom = 298.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="Button" parent="VBoxContainer" instance=ExtResource( 1 )]
+self_modulate = Color( 0, 1, 0.635294, 1 )
+margin_top = 302.0
+margin_right = 200.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Salir"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/MenuPrincipal" to="." method="_on_MenuPrincipal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_Salir_pressed"]

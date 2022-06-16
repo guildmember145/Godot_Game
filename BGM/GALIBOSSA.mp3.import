@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GALIBOSSA.mp3-2f03f62ddc6a7600fd2aa5dc578f5b04.mp3str"
+
+[deps]
+
+source_file="res://BGM/GALIBOSSA.mp3"
+dest_files=[ "res://.import/GALIBOSSA.mp3-2f03f62ddc6a7600fd2aa5dc578f5b04.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://recursos/Enemies/spikeMan_walk1.png" type="Texture" id=1]
+[ext_resource path="res://recursos/Enemies/spikeMan_walk2.png" type="Texture" id=2]
+[ext_resource path="res://juego/enemigos/Pinchon.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "caminar",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.5038, 1.1185 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 19.3826
+height = 6.27954
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 2.64208
+height = 22.0882
+
+[node name="Pinchon" type="KinematicBody2D"]
+z_index = 35
+z_as_relative = false
+collision_layer = 8
+collision_mask = 4
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -22.6532, -77.7205 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "caminar"
+centered = false
+
+[node name="ColisionPies" type="CollisionShape2D" parent="."]
+modulate = Color( 0.133333, 0.0235294, 0.0235294, 1 )
+position = Vector2( 0.98841, -1.51424 )
+shape = SubResource( 2 )
+
+[node name="DetectorVacio" type="RayCast2D" parent="."]
+modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+position = Vector2( 35, -0.297 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 4
+
+[node name="DetectorPared" type="RayCast2D" parent="."]
+modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+position = Vector2( -27, -26.755 )
+scale = Vector2( -1, 1 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 4
+
+[node name="DetectorPared2" type="RayCast2D" parent="."]
+modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+position = Vector2( 30.6448, -27.3642 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 4
+
+[node name="DetectorJugador" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorJugador"]
+self_modulate = Color( 0.117647, 0.101961, 0.101961, 1 )
+position = Vector2( -0.281563, -26.1643 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectorJugador"]
+modulate = Color( 0.172549, 0.156863, 0.156863, 1 )
+position = Vector2( -0.198425, -61.7102 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="DetectorJugador" to="." method="_on_DetectorJugador_body_entered"]

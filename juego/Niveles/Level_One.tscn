@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/Objetos/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Objetos/ZanahoriaLlave.tscn" type="PackedScene" id=3]
+
+[node name="Level_One" instance=ExtResource( 1 )]
+niveles = "res://juego/Niveles/Level_One.tscn"
+
+[node name="Portal" parent="." index="0" instance=ExtResource( 2 )]
+position = Vector2( 1080.62, 1118.09 )
+proximo_nivel = "res://juego/Niveles/Level_Two.tscn"
+
+[node name="TextureRect" parent="ParallaxBackground/NubesCercanas" index="0"]
+margin_left = 4.64201
+margin_top = -9.19331
+margin_right = 2052.65
+margin_bottom = 2038.81
+
+[node name="Bunnydunny" parent="Jugadores" index="0"]
+position = Vector2( 1054.31, 849.153 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1076, 952 )

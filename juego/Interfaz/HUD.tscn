@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/Interfaz/ContenedorInfo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/Interfaz/ContenedorLlaves.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Interfaz/ContenedorPlata.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/Interfaz/ContenedorBronce.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/Interfaz/ContenedorOro.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/Interfaz/HUD.gd" type="Script" id=6]
+
+[node name="HUD" type="Control"]
+self_modulate = Color( 0.305882, 0.435294, 0.501961, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.834167
+margin_top = 8.40022
+margin_right = -0.834167
+margin_bottom = 8.40021
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 84.3987, 1.59341 ],
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorBronce" parent="." instance=ExtResource( 4 )]
+self_modulate = Color( 0, 0.780392, 1, 0.372549 )
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -105.81
+margin_top = -0.545979
+margin_right = -8.80957
+margin_bottom = 20.454
+
+[node name="ContenedorPlata" parent="." instance=ExtResource( 3 )]
+self_modulate = Color( 0, 0.866667, 1, 0.372549 )
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -204.951
+margin_top = -0.28337
+margin_right = -107.951
+margin_bottom = 20.7167
+
+[node name="ContenedorVidas" parent="." instance=ExtResource( 1 )]
+self_modulate = Color( 0.239216, 0.176471, 0.439216, 0.372549 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.35655
+margin_top = 41.4092
+margin_right = 103.357
+margin_bottom = 74.4092
+
+[node name="ContenedorLlaves" parent="." instance=ExtResource( 2 )]
+self_modulate = Color( 0.352941, 0.196078, 0.439216, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -919.156
+margin_top = -259.28
+margin_right = -822.154
+margin_bottom = -226.28
+
+[node name="ContenedorOro" parent="." instance=ExtResource( 5 )]
+self_modulate = Color( 0, 0.960784, 1, 0.372549 )
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -303.553
+margin_top = -0.478077
+margin_right = -206.553
+margin_bottom = 20.522
